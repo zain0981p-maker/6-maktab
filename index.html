@@ -8,18 +8,43 @@
 </head>
 <body>
     <!--Header start-->
-        <div class="nav">
-            <div class="">
-                <h1>6-maktab</h1>
-            </div>
-            <div class="">
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
+    <div class="nav">
+        <div class="a">
+            <h1>6-maktab</h1>
+        </div>
+        <div class="l">
+            <a href="#">Home</a>
+            <a href="#">Maktab haqida</a>
+            <a href="#">O'qtuvchilar</a>
+            <a href="#">Fan to'garaklari</a>
+        </div>
+    </div>
+    <!-- Header end -->
+
+    <!--Hero start-->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Bizning maktab</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat dolorem, amet beatae, cum numquam quo repellat minima unde ab perspiciatis enim tempora quas praesentium quia tenetur. Omnis pariatur nisi perspiciatis.</p>
             </div>
         </div>
-    <!-- Header end -->
+        <div class="r-kontent">
+            <img src="wq.jpg" alt="maktab">
+        </div>
+    </div>
+    <!--Hero end -->
     
+    <script>
+        // Navbar scroll effekti
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
