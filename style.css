@@ -1,253 +1,41 @@
-/* Umumiy stillar */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    min-height: 100vh;
-}
-
-/* Navbar */
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-/* Scroll qilganda navbar efekti */
-.nav.scrolled {
-    padding: 15px 40px;
-    background: rgba(44, 62, 80, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Logotip */
-.a h1 {
-    color: white;
-    font-size: 2.2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(45deg, #fff 30%, #3498db 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    transition: all 0.3s ease;
-}
-
-.a h1:hover {
-    transform: scale(1.05);
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
-}
-
-/* Navigation linklar */
-.l {
-    display: flex;
-    gap: 35px;
-}
-
-.l a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.l a::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 3px;
-    background: #f1c40f;
-    transition: width 0.3s ease;
-}
-
-.l a:hover::before {
-    width: 80%;
-}
-
-.l a:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Hero section - ESKI BACKGROUND QOLDI */
-.hero {
-    margin-top: 100px;
-    min-height: calc(100vh - 100px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px 40px;
-    background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(52, 152, 219, 0.8)), 
-                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Chap qism - Matnlar */
-.hero-content {
-    flex: 0 0 55%;
-    max-width: 55%;
-    padding-right: 40px;
-    animation: slideInLeft 1s ease-out;
-}
-
-/* h2 va p ustma-ust */
-.hero-text {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.hero h2 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    line-height: 1.2;
-    margin: 0;
-    animation: slideDown 1s ease-out;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-}
-
-.hero h2 span {
-    color: #f1c40f;
-    text-shadow: 2px 2px 4px rgba(241, 196, 15, 0.3);
-}
-
-.hero p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.95);
-    margin: 0;
-    animation: fadeIn 1s ease-out 0.3s both;
-    padding-right: 20px;
-    text-align: justify;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-/* O'ng qism - Rasm */
-.r-kontent {
-    flex: 0 0 40%;
-    max-width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: slideInRight 1s ease-out 0.5s both;
-}
-
-.r-kontent img {
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    border: 5px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.5s ease;
-    object-fit: cover;
-    object-position: center;
-    filter: brightness(1.05) contrast(1.1);
-}
-
-.r-kontent img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
-    border-color: #f1c40f;
-}
-
-/* Animatsiyalar */
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Responsive dizayn - rasmga mos */
-@media (max-width: 1200px) {
-    .hero h2 {
-        font-size: 3rem;
+/* Responsive dizayn - FAQAT TELEFONGA MOSLASH */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+        position: fixed;
+        width: 100%;
+        top: 0;
     }
     
-    .hero p {
-        font-size: 1.1rem;
-    }
-    
-    .r-kontent {
-        flex: 0 0 45%;
-        max-width: 45%;
-    }
-}
-
-@media (max-width: 992px) {
     .hero {
+        margin-top: 120px; /* Navbar balandligi uchun */
         flex-direction: column;
         text-align: center;
-        gap: 50px;
-        padding: 40px 30px;
+        gap: 40px;
+        padding: 30px 20px;
+        min-height: auto;
+    }
+    
+    .a h1 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    
+    .l {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .l a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
     }
     
     .hero-content {
@@ -256,97 +44,67 @@ body {
         padding-right: 0;
     }
     
+    .hero-text {
+        gap: 20px;
+    }
+    
     .hero h2 {
-        font-size: 2.8rem;
+        font-size: 2.2rem;
+        line-height: 1.1;
     }
     
     .hero p {
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding-right: 0;
         text-align: center;
+        line-height: 1.6;
     }
     
     .r-kontent {
         flex: 0 0 100%;
-        max-width: 80%;
-    }
-    
-    .r-kontent img {
-        max-height: 400px;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-        position: relative;
-    }
-    
-    .hero {
-        margin-top: 0;
-        min-height: auto;
-        padding: 80px 20px;
-    }
-    
-    .a h1 {
-        font-size: 1.8rem;
-        text-align: center;
-    }
-    
-    .l {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-    
-    .l a {
-        padding: 8px 15px;
-        font-size: 1rem;
-    }
-    
-    .hero h2 {
-        font-size: 2.5rem;
-    }
-    
-    .hero p {
-        font-size: 1rem;
-    }
-    
-    .r-kontent {
         max-width: 90%;
+        margin: 0 auto;
     }
     
     .r-kontent img {
         max-height: 350px;
+        width: 100%;
+        border-width: 4px;
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
     .nav {
-        padding: 15px;
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .hero {
+        margin-top: 110px;
+        padding: 25px 15px;
+        gap: 30px;
     }
     
     .a h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
     .l {
-        gap: 10px;
+        gap: 8px;
     }
     
     .l a {
-        padding: 6px 12px;
-        font-size: 0.9rem;
+        padding: 6px 10px;
+        font-size: 0.85rem;
+        min-width: 110px;
     }
     
     .hero h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .hero p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
     
     .r-kontent {
@@ -354,44 +112,79 @@ body {
     }
     
     .r-kontent img {
-        max-height: 300px;
+        max-height: 280px;
     }
 }
 
-/* Smooth scroll uchun */
-html {
-    scroll-behavior: smooth;
+@media (max-width: 360px) {
+    .hero {
+        margin-top: 100px;
+        padding: 20px 10px;
+    }
+    
+    .a h1 {
+        font-size: 1.3rem;
+    }
+    
+    .l a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+        min-width: 100px;
+    }
+    
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+    
+    .hero p {
+        font-size: 0.85rem;
+    }
+    
+    .r-kontent img {
+        max-height: 250px;
+    }
 }
 
-/* Navigation animation */
-.nav {
-    animation: fadeIn 0.8s ease-out;
+/* Landscape orientation uchun */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        flex-direction: row;
+        gap: 30px;
+        padding: 40px 20px;
+        min-height: calc(100vh - 120px);
+    }
+    
+    .hero-content {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    .r-kontent {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+    }
 }
 
-/* Hover efekti tugmalar uchun */
-.l a:active {
-    transform: translateY(1px);
-}
-
-/* Additional styles for active link */
-.l a.active {
-    background: #f1c40f;
-    color: #2c3e50;
-    font-weight: 600;
-}
-
-.l a.active::before {
-    display: none;
-}
-
-/* Dekorativ elementlar */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, #f1c40f, #3498db, #f1c40f);
-    opacity: 0.7;
+/* Touch devices uchun hover effektlarni o'zgartirish */
+@media (hover: none) and (pointer: coarse) {
+    .l a:hover {
+        transform: none;
+        background: none;
+    }
+    
+    .r-kontent img:hover {
+        transform: none;
+    }
+    
+    .a h1:hover {
+        transform: none;
+    }
 }
